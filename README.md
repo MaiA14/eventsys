@@ -2,8 +2,8 @@
 
 An app where users can see their upcoming events, create events, delete, edit and more. 
 
-Front-end : React , Scss ,HTML5.\
-Back-end : Graphql, Node.js ,Mongoose ,Express, bcrypt.
+Front-end : React , CSS ,HTML5.\
+Back-end : Graphql, Node.js ,Mongoose, JWT ,Express, bcrypt.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
