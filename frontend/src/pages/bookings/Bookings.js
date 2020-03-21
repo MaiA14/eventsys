@@ -58,46 +58,49 @@ export default class BookingsPage extends Component {
             });
     };
 
-    deleteBookingHandler = (bookingId) => {
+    deleteBookingHandler = bookingId => {
         this.setState({ isLoading: true });
         const requestBody = {
-            query: `
-              mutation {
-                cancelBooking(bookingId: "${bookingId}") {
+          query: `
+              mutation CancelBooking($id: ID!) {
+                cancelBooking(bookingId: $id) {
                 _id
                  title
                 }
               }
-            `
+            `,
+          variables: {
+            id: bookingId
+          }
         };
-
+    
         fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + this.context.token
-            }
+          method: 'POST',
+          body: JSON.stringify(requestBody),
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + this.context.token
+          }
         })
-            .then(res => {
-                if (res.status !== 200 && res.status !== 201) {
-                    throw new Error('Failed!');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState(prevState => {
-                    const updatedBookings = prevState.bookings.filter(booking => {
-                        return booking._id !== bookingId;
-                    });
-                    return { bookings: updatedBookings, isLoading: false };
-                });
-            })
-            .catch(err => {
-                console.log(err);
-                this.setState({ isLoading: false });
+          .then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+              throw new Error('Failed!');
+            }
+            return res.json();
+          })
+          .then(resData => {
+            this.setState(prevState => {
+              const updatedBookings = prevState.bookings.filter(booking => {
+                return booking._id !== bookingId;
+              });
+              return { bookings: updatedBookings, isLoading: false };
             });
-    };
+          })
+          .catch(err => {
+            console.log(err);
+            this.setState({ isLoading: false });
+          });
+      };
 
 
     render() {
