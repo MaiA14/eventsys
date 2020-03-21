@@ -1,6 +1,6 @@
 # Eventsys
 
-An app where users can see their upcoming events, create events, cancel booking for events and more. Still in development. 
+An app where users can see their upcoming events, create events, cancel booking for events and more.  
 
 Front-end : React , CSS ,HTML5.\
 Back-end : Graphql, Node.js ,Mongoose, JWT ,Express, bcrypt.
