@@ -4,9 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.form-control label,
-.form-control input,
-.form-control textarea {
+.form-control label, .form-control input, .form-control textarea {
   width: 100%;
   display: block;
 }
@@ -19,25 +17,69 @@ body {
   margin-bottom: 1rem;
 }
 
-.form-actions button,
-.btn {
-  background: #5101d1;
+.form-actions button, .btn {
+  background: #429a6d;
   font: inherit;
-  border: 1px solid #5101d1;
+  border: 1px solid #429a6d;
   outline: none;
   border-radius: 3px;
-  padding: 0.25rem 1rem;
+  padding: 0.50rem 1rem;
   margin-right: 1rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
   color: white;
   cursor: pointer;
+  transition: .3s;
 }
 
-.form-actions button:hover,
-.form-actions button:active,
-.btn:hover,
-.btn:active {
+.form-actions button:hover, .form-actions button:active, .btn:hover, .btn:active {
   outline: none;
-  background: #6219d6;
-  border-color: #6219d6;
+  opacity: 0.90;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.login-input {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, .4);
+  display: block;
+  width: 340px !important;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+}
+
+input {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, .4);
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+}
+
+input:focus {
+  border: 1.2px solid #429a6d;
+}
+
+textarea {
+  resize: none !important;
+  border: 1px solid rgba(0, 0, 0, .4);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+textarea:focus {
+  outline-color: #429a6d;
+}
+
+@font-face {
+  font-family: LobsterTwo;
+  src: url(./styles/fonts/Lobster/LobsterTwo-Regular.ttf);
+}
+
+@font-face {
+  font-family: Lobster;
+  src: url(./styles/fonts/Lobster/Lobster-Regular.ttf);
 }

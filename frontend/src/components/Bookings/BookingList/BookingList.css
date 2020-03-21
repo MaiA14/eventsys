@@ -9,8 +9,9 @@
   .bookings__item {
     margin: 0.5rem 0;
     padding: 0.5rem;
-    border: 1px solid #5101d1;
+    border: 1px solid #429a6d;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 5px;
   }
