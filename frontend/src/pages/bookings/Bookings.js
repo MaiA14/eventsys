@@ -3,11 +3,14 @@ import React, { Component } from 'react'
 import Spinner from '../../components/Spinner/Spinner.js';
 import BookingList from '../../components/Bookings/BookingList/BookingList.js';
 import AuthContext from '../../context/auth-context.js';
+import BookingChart from '../../components/Bookings/BookingChart/BookingChart.js';
+import BookingControls from '../../components/Bookings/BookingControls/BookingControls.js';
 
 export default class BookingsPage extends Component {
     state = {
         isLoading: false,
-        bookings: []
+        bookings: [],
+        outputType: 'list'
     }
 
     static contextType = AuthContext;
@@ -28,6 +31,7 @@ export default class BookingsPage extends Component {
                    _id
                    title
                    date
+                   price
                  }
                 }
               }
@@ -61,7 +65,7 @@ export default class BookingsPage extends Component {
     deleteBookingHandler = bookingId => {
         this.setState({ isLoading: true });
         const requestBody = {
-          query: `
+            query: `
               mutation CancelBooking($id: ID!) {
                 cancelBooking(bookingId: $id) {
                 _id
@@ -69,50 +73,71 @@ export default class BookingsPage extends Component {
                 }
               }
             `,
-          variables: {
-            id: bookingId
-          }
-        };
-    
-        fetch('http://localhost:8000/graphql', {
-          method: 'POST',
-          body: JSON.stringify(requestBody),
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + this.context.token
-          }
-        })
-          .then(res => {
-            if (res.status !== 200 && res.status !== 201) {
-              throw new Error('Failed!');
+            variables: {
+                id: bookingId
             }
-            return res.json();
-          })
-          .then(resData => {
-            this.setState(prevState => {
-              const updatedBookings = prevState.bookings.filter(booking => {
-                return booking._id !== bookingId;
-              });
-              return { bookings: updatedBookings, isLoading: false };
+        };
+
+        fetch('http://localhost:8000/graphql', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + this.context.token
+            }
+        })
+            .then(res => {
+                if (res.status !== 200 && res.status !== 201) {
+                    throw new Error('Failed!');
+                }
+                return res.json();
+            })
+            .then(resData => {
+                this.setState(prevState => {
+                    const updatedBookings = prevState.bookings.filter(booking => {
+                        return booking._id !== bookingId;
+                    });
+                    return { bookings: updatedBookings, isLoading: false };
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                this.setState({ isLoading: false });
             });
-          })
-          .catch(err => {
-            console.log(err);
-            this.setState({ isLoading: false });
-          });
-      };
+    };
+
+    changeOutputTypeHandler = (outputType) => {
+        if (outputType === 'list') {
+            this.setState({ outputType: 'list' });
+        }
+        else {
+            this.setState({ outputType: 'chart' });
+        }
+    }
 
 
     render() {
-        return (
+        let content = <Spinner />;
+        if (!this.state.isLoading) {
+          content = (
             <React.Fragment>
-                {this.state.isLoading ? (
-                    <Spinner />
+              <BookingControls
+                activeOutputType={this.state.outputType}
+                onChange={this.changeOutputTypeHandler}
+              />
+              <div>
+                {this.state.outputType === 'list' ? (
+                  <BookingList
+                    bookings={this.state.bookings}
+                    onDelete={this.deleteBookingHandler}
+                  />
                 ) : (
-                        <BookingList bookings={this.state.bookings}
-                            onDelete={this.deleteBookingHandler} />
-                    )}
+                  <BookingChart bookings={this.state.bookings} />
+                )}
+              </div>
             </React.Fragment>
-        );
+          );
+        }
+        return <React.Fragment>{content}</React.Fragment>;
+      }
     }
-}
