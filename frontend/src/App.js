@@ -6,6 +6,7 @@ import AuthContext from './context/auth-context.js';
 import MainNavigation from './components/MainNavigation/MainNavigation.js';
 
 import './App.css';
+
 class App extends Component {
   state = {
     token: null,
@@ -34,7 +35,7 @@ class App extends Component {
           >
             <MainNavigation />
             <main className="main-content">
-            <Switch>
+              <Switch>
                 {this.state.token && <Redirect from="/" to="/events" exact />}
                 {this.state.token && (
                   <Redirect from="/auth" to="/events" exact />
