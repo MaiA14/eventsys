@@ -29,6 +29,7 @@ body {
   color: white;
   cursor: pointer;
   transition: .3s;
+  margin-top: 10px;
 }
 
 .form-actions button:hover, .form-actions button:active, .btn:hover, .btn:active {

@@ -3,7 +3,6 @@
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     position: fixed;
-    top: 20vh;
     left: 5%;
     z-index: 1;
 }
@@ -20,14 +19,12 @@
 }
 
 .modal__content {
-    /* display: flex;
-    justify-content: center; */
     padding: 2.5rem;
 }
 
 .modal__actions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 1rem;
 }
 

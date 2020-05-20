@@ -2,7 +2,7 @@ import React from 'react';
 
 import './BookingList.css';
 
-const bookingList = props => (
+const bookingList = props => ( 
     <ul className="bookings__list">
         {props.bookings.map(booking => {
             return (

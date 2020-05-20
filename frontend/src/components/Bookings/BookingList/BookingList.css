@@ -15,3 +15,9 @@
     align-items: center;
     border-radius: 5px;
   }
+
+  @media (max-width: 600px){
+    .bookings__item {
+      flex-direction: column;
+    }
+  }

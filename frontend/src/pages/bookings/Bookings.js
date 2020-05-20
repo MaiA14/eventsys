@@ -126,7 +126,7 @@ export default class BookingsPage extends Component {
                 onChange={this.changeOutputTypeHandler}
               />
               <div>
-                {this.state.outputType === 'list' ? (
+                {this.state.outputType === 'list'  ? (
                   <BookingList
                     bookings={this.state.bookings}
                     onDelete={this.deleteBookingHandler}

@@ -7,6 +7,12 @@
     align-items: center;
     border-radius: 5px;
   }
+
+  @media (max-width: 600px){
+    .events__list-item {
+      flex-direction: column;
+    }
+  }
   
   .events__list-item h1 {
     margin: 0;
