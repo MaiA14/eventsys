@@ -6,7 +6,6 @@ Front-end : React , CSS ,HTML5.\
 Back-end : Graphql, Node.js ,Mongoose, JWT ,Express, bcrypt.
 
 
-
 ![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/magmnifybvvag64p4zda.png)
 
 Whether you logged in or not, you are able to see all upcoming events.
@@ -40,7 +39,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `nodemon app` for backend
+
+### `npm start` for frontend
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
