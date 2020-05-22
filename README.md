@@ -28,7 +28,7 @@ In booking tab, you will find two subtabs: bookings and charts. Booking contains
 
 ![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/rqhhdksvswko0n4vabaw.png)
 
-Charts tab will give you indication about the events you chose to book, whether it expesnsive event, normal or cheap. 
+Charts tab will give you indication about the events you chose to book, whether it's expesnsive event, normal or cheap. 
 
 ![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/cafhs2fdos1mpjmfiryg.png)
 
