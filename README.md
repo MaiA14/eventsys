@@ -5,6 +5,35 @@ An app where users can see their upcoming events, create events, cancel booking 
 Front-end : React , CSS ,HTML5.\
 Back-end : Graphql, Node.js ,Mongoose, JWT ,Express, bcrypt.
 
+
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/magmnifybvvag64p4zda.png)
+
+Whether you logged in or not, you are able to see all upcoming events.
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/xnovbabcj9xyf1zuvryk.png)
+
+Including details about the event such as description of the event and price.
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160225/wxi8fwjbnaw8runbxssd.png)
+
+When you are logged in, you can create your own event by clicking "Create event".
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/wmknfasez2inbbrdjjkg.png)
+
+Then, you will see this popup. By clicking "Confirm", your event will be added to the list of events. In addition, as logged in user, you can see whether you are the owner of the event or not.
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/mkj3zwkzlg6nevj3zhdm.png)
+
+In booking tab, you will find two subtabs: bookings and charts. Booking contains events you chose to book.
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/rqhhdksvswko0n4vabaw.png)
+
+Charts tab will give you indication about the events you chose to book, whether it expesnsive event, normal or cheap. 
+
+![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/cafhs2fdos1mpjmfiryg.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
