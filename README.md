@@ -32,6 +32,7 @@ Charts tab will give you indication about the events you chose to book, whether 
 
 ![Image of eventsys overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1590160224/cafhs2fdos1mpjmfiryg.png)
 
+The app supports various mobile and browsers.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
